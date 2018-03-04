@@ -14,7 +14,7 @@ class Iterator {
         Base* self_ptr;
         Base* current_ptr;
     public:
-        Iterator(Base* ptr) { this->self_ptr = ptr; current_ptr = NULL; }
+        Iterator(Base* ptr){ this->self_ptr = ptr; current_ptr = NULL; }
 
         /* Sets up the iterator to start at the beginning of traversal */
         virtual void first() = 0;

@@ -9,9 +9,7 @@ using namespace std;
 
 class Base;
 
-Iterator::Iterator(Base* ptr) {
-	this->self_ptr = ptr;
-}
+
 
 OperatorIterator::OperatorIterator(Base* ptr): Iterator(ptr) {};
 
@@ -46,7 +44,7 @@ void NullIterator::next() {return;}
 bool NullIterator::is_done() {return true;}
 Base* NullIterator::current() {return NULL;}
 
-PreOrderIterator::PreOrderIterator(Base* ptr) : Iterator(ptr) {};
+PreorderIterator::PreorderIterator(Base* ptr) : Iterator(ptr) {};
 
 void PreorderIterator::first() {
     // Empty the stack (just in case we had something leftover from another run)

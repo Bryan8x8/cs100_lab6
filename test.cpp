@@ -15,9 +15,24 @@ int main() {
 	Root* root = new Root(sub);
 
 	cout << "--- PreOrder Iteration ---" << endl;
-	PreOrderIterator* pre_itr = new PreOrderIterator(root);
+	PreorderIterator* pre_itr = new PreorderIterator(root);
 	for(pre_itr->first(); !pre_itr->is_done(); pre_itr->next()) {
 		pre_itr->current()->print();
+		cout << endl;
+	}
+Op* op1 = new Op(5);
+	Op* op0 = new Op(10);
+	Op* op5 = new Op(2);
+	Op* op6 = new Op(1);
+	Mult* multiply = new Mult(op1, op5);
+	Sub* Subtract = new Sub(multiply, op0);
+	Add* addition = new Add(Subtract, op6);
+	Root* r = new Root(addition);
+	cout << "Second test" << endl;
+	PreorderIterator* temp = new PreorderIterator(r);
+	for(temp->first(); !temp->is_done(); temp->next())
+	{
+		temp->current()->print();
 		cout << endl;
 	}
 };
