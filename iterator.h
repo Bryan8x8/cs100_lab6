@@ -2,6 +2,12 @@
 #define __ITERATOR_H__
 
 #include "composite.h"
+#include <stack>
+#include <string>
+
+using namespace std;
+
+class Base;
 
 class Iterator {
     protected:
@@ -54,6 +60,8 @@ class NullIterator : public Iterator {
 };
 
 class PreorderIterator : public Iterator {
+	protected:
+stack<Iterator*> iterators;
     public:
         PreorderIterator(Base* ptr);
 
